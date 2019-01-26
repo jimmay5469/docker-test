@@ -71,5 +71,5 @@ config :docker_test, DockerTest.Repo,
   username: "postgres",
   password: "postgres",
   database: "docker_test_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10
