@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: bitwalker/alpine-elixir-phoenix:1.8.0
+    command: mix phx.server
+    working_dir: /opt/app/docker_test
+    volumes:
+      - ./:/opt/app/docker_test
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+  db:
+    image: postgres:11.1-alpine
