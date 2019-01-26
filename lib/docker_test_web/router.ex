@@ -16,7 +16,7 @@ defmodule DockerTestWeb.Router do
   scope "/", DockerTestWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    resources "/", UserController
   end
 
   # Other scopes may use custom stacks.
