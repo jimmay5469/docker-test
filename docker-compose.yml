@@ -6,8 +6,6 @@ services:
     working_dir: /opt/app/docker_test
     volumes:
       - ./:/opt/app/docker_test
-    ports:
-      - "4000:4000"
     depends_on:
       - db
   db:
