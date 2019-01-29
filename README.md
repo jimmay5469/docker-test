@@ -35,4 +35,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - Run `scp ./config/prod.secret.exs root@[ip]:~/apps/docker-test/config/prod.secret.exs`
 
 ### Starting Server
-- Run `ssh -A root@[ip] "docker-compose up -d"`
+- Run `ssh -A root@[ip] "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"`

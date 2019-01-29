@@ -2,8 +2,8 @@
 
 ufw allow OpenSSH
 ufw allow http
-ufw allow 4000
-iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 4000
+ufw allow 4001
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 4001
 ufw --force enable
 
 apt update
