@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     image: bitwalker/alpine-elixir-phoenix:1.8.0
-    command: mix phx.server
+    command: ./scripts/run.sh
     working_dir: /opt/app/docker_test
     volumes:
       - ./:/opt/app/docker_test
