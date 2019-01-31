@@ -31,10 +31,13 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ### Provisioning Server
 
-- Run `servers/jimmay5469-docker` provisioning
+- Make sure ansible is installed
+- Create `./server/inventory`
+- Run `cd server && ansible-galaxy install -r requirements.yml && ansible-playbook main.yml; cd -`
 - Run `ssh -A deploy@198.211.103.220 "ssh-keyscan github.com >> ~/.ssh/known_hosts"`
 - Run `ssh -A deploy@198.211.103.220 "git clone git@github.com:jimmay5469/docker-test.git ~/apps/docker-test"`
 - Run `scp ./config/prod.secret.exs deploy@198.211.103.220:~/apps/docker-test/config/prod.secret.exs`
+- Create `./Caddyfile`
 - Run `scp ./Caddyfile deploy@198.211.103.220:~/apps/docker-test/Caddyfile`
 
 ### Starting Server

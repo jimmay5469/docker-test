@@ -1,0 +1,13 @@
+- name: Security
+  hosts: all
+  tasks:
+    - name: Run security script
+      script: ./scripts/security.sh
+
+- name: Docker
+  hosts: all
+  vars:
+    docker_users:
+      - deploy
+  roles:
+    - geerlingguy.docker
