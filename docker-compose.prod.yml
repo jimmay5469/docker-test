@@ -4,4 +4,4 @@ services:
     environment:
       - MIX_ENV=prod
     ports:
-      - "4001:4001"
+      - "80:4001"

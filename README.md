@@ -31,8 +31,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ### Provisioning Server
 
-- Run `ssh -A root@[ip] "bash -s" -- < ./server/provision.sh`
-- Run `scp ./config/prod.secret.exs root@[ip]:~/apps/docker-test/config/prod.secret.exs`
+- Run `servers/jimmay5469-docker` provisioning
+- Run `ssh -A deploy@[ip] "ssh-keyscan github.com >> ~/.ssh/known_hosts"`
+- Run `ssh -A deploy@[ip] "git clone git@github.com:jimmay5469/docker-test.git ~/apps/docker-test"`
+- Run `scp ./config/prod.secret.exs deploy@[ip]:~/apps/docker-test/config/prod.secret.exs`
 
 ### Starting Server
-- Run `ssh -A root@[ip] "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"`
+- Run `ssh -A deploy@[ip] "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"`
